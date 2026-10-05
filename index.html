@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>C Programming — Exam Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-dot"></span><div><strong>C Programming</strong><small>Exam Guide · Units I & II</small></div></div>
+      <div class="top-actions">
+        <button id="importantToggle" class="ghost-btn">★ Only important</button>
+        <button id="answersToggle" class="ghost-btn">Answers: ON</button>
+        <button id="topicsBtn" class="ghost-btn mobile-only">Topics</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="side-head"><span>Topics</span><button id="closeTopics">×</button></div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span id="progressText">0 / 0 topics done</span><span id="progressPct">0%</span></div>
+          <div class="progress"><i id="progressBar"></i></div>
+        </div>
+        <input id="search" class="search" placeholder="Search topics..." />
+        <div class="unit-switch"><button class="unit-btn active" data-unit="all">All</button><button class="unit-btn" data-unit="1">Unit I</button><button class="unit-btn" data-unit="2">Unit II</button></div>
+        <nav id="topicList"></nav>
+      </aside>
+
+      <section class="content">
+        <div class="hero" id="hero">
+          <div class="eyebrow">PROGRAMMING IN C · EXAM-FIRST</div>
+          <h1>Learn the stuff you actually need to <span>score.</span></h1>
+          <p>Clean notes, C programs, dry runs, and PYQ-focused practice for your Unit I + Unit II syllabus.</p>
+          <div class="hero-row"><button class="primary" id="startBtn">Start reading →</button><span class="hero-note">Progress is saved in your browser.</span></div>
+        </div>
+        <div id="topicView"></div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
