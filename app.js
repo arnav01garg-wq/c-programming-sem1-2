@@ -33,13 +33,147 @@ const topics=[
 {u:2,t:'Root finding of a positive floating-point number',tags:['program','high'],intro:'A numerical-programming problem: find the positive root of a suitable equation/number using an iterative method.',body:'The syllabus names root finding but the uploaded extracts available here do not specify a single required numerical method. Do not memorize a method blindly: use the exact algorithm taught in your class if your teacher specified one.',exam:'Because the supplied Unit-II material does not establish the required root-finding method, this guide deliberately leaves the method open rather than inventing one.'}
 ];
 
+
+// PYQs below are mapped from the user's uploaded ES-102 Programming in C papers.
+// If a syllabus topic has no direct question in those papers, the site says so instead of inventing one.
+const pyqMap={
+'C program structure & compilation':[
+ ['2024 End Term','Explain the basic structure and compilation process of C program.'],
+ ['2024 Mid Term','Describe the compilation process in C programming language.'],
+ ['2025 End Term','Briefly describe the basic structure and execution of a C Program.']
+],
+'Data types & format specifiers':[
+ ['2024 Mid Term','What are datatypes? What are the basic datatypes in C? Explain format specifier and memory requirement of each datatype?'],
+ ['2025 End Term','Briefly describe Data Types.']
+],
+'Declarations, initialization & constants':[
+ ['2025 End Term','Briefly describe Variable and Constant.'],
+ ['2025 Mid Term','Explain keywords & identifiers with example.']
+],
+'Operators & expressions':[
+ ['2024 End Term','Define Operator? Explain with example different types of operator arithmetic, logical, bitwise and ternary operator.'],
+ ['2025 Mid Term','What is an operator. Explain different types of operators used in C programming.'],
+ ['2025 End Term','Write short notes with suitable examples: Bit wise operator, Increment–Decrement operator, Operator Precedence.']
+],
+'Type conversion & casting':[
+ ['2023 End Term','What is type conversion? Explain two types of conversion with examples.'],
+ ['2024 Mid Term','Predict the output of the program involving i/j*j and j/i*i.']
+],
+'printf, scanf & format specifiers':[
+ ['2023 End Term','Differentiate between put(), putchar() and puts().'],
+ ['2024 End Term','Find the output of the given C program.']
+],
+'Compound statements (blocks)':[
+ ['2024 End Term','Explain the basic structure and compilation process of C program.']
+],
+'if, if-else, else-if & nested decisions':[
+ ['2025 Mid Term','Any year is input through the keyboard. Write a leap year program to determine whether the year is a leap year or not.'],
+ ['2024 Mid Term','What is ternary operator? Design a flowchart and write a C program using ternary operator to check whether a given number is odd or even.']
+],
+'switch statement':[
+ ['2024 Mid Term','Find the output of the C code using a for loop, switch, continue and break.']
+],
+'Loops: while, do-while & for':[
+ ['2024 End Term','Difference between while and do-while loop?'],
+ ['2024 Mid Term','Write difference between entry-controlled loop and exit controlled loop.']
+],
+'break, continue, goto & return':[
+ ['2025 Mid Term','Why do we need a break and goto statement. Justify.'],
+ ['2024 Mid Term','Find the output of the C code using continue and break inside switch.']
+],
+'Algorithm, flowchart & pseudocode':[
+ ['2024 End Term','Difference between flowchart and algorithm? Write an algorithm and flowchart to find the factorial of a number.'],
+ ['2023 End Term','Define pseudocode. Write a pseudocode to find the area of triangle when we know the lengths of all three of its sides.'],
+ ['2025 End Term','Write an algorithm and draw flowchart to find even numbers between 1 to 50.']
+],
+'Tracing & dry run':[
+ ['2024 Mid Term','Find the output for the given C code involving for and switch.'],
+ ['2025 Mid Term','Predict the output of the given program involving integer division.']
+],
+'Structured programming':[
+ ['2025 End Term','Briefly describe the basic structure and execution of a C Program.']
+],
+'C89, C99, C11 & C23':[
+ ['2023 End Term','What are some key features introduced in the C99 extensions? How do C99 extensions improve the functionality of the C programming language?']
+],
+'Function declaration, definition & invocation':[
+ ['2025 End Term','What is Function in C? Explain the library and user defined functions in C.'],
+ ['2023 End Term','What are actual parameters and formal parameters? Illustrate with example.'],
+ ['2025 Mid Term','Write two different C functions to compute area and perimeter of a triangle.']
+],
+'Argument passing & call by value':[
+ ['2024 Mid Term','Explain the concept of call by value and call by reference with the help of example.'],
+ ['2023 End Term','What are actual parameters and formal parameters? Illustrate with example.'],
+ ['2025 End Term','What is call by Value and Call by reference?']
+],
+'Recursion':[
+ ['2024 Mid Term','What is recursion? Write a C program to find the factorial of number through recursion.'],
+ ['2024 End Term','Define Recursion function? Write a C program to find the Fibonacci series using recursion.'],
+ ['2025 End Term','What is call by Value and Call by reference? Write a C program to show working of Recursion.']
+],
+'Inline functions & macro functions':[],
+'Storage classes':[
+ ['2025 Mid Term','What is the difference between the local variable and global variable in C?']
+],
+'Scope & lifetime':[
+ ['2024 Mid Term','What is variable? Discuss the visibility, scope, and initial value of a variable.'],
+ ['2025 Mid Term','What is the difference between the local variable and global variable in C?']
+],
+'Header files & modular design':[
+ ['2023 End Term','Describe header file and its usage in C programming.'],
+ ['2024 End Term','What is header file? Explain library functions of the listed header files.'],
+ ['2025 End Term','Write short description and function used in stdio.h, math.h and string.h.'],
+ ['2025 Mid Term','What is the difference between #include <filename> and #include "filename"?']
+],
+'1D & 2D arrays':[
+ ['2023 End Term','What is array? Explain the declaration and initialization of one dimensional and two dimensional arrays with an example.'],
+ ['2024 Mid Term','What is array? Explain declaration and initialization of two-dimensional array? Write a C program to find matrix transpose.'],
+ ['2025 End Term','What is an Array? Briefly describe types of the Array. Explain the memory diagram of the array.'],
+ ['2025 Mid Term','Define array. Write a program to print the Maximum and Minimum element in an array.']
+],
+'Bubble sort':[
+ ['2023 End Term','What do you mean by Sorting? Write a program to sort a list of n numbers in descending order using bubble sort.']
+],
+'Selection sort':[
+ ['2024 End Term','Define Selection Sort? Sort the given elements using selection sort: 77,33,44,11,88,22,66,55.'],
+ ['2025 Mid Term','Write a program to sort n number of elements in descending order using selection sort.']
+],
+'Insertion sort':[
+ ['2024 End Term','What is insertion sort? Write a C program to implement insertion sort.']
+],
+'Linear & binary search':[
+ ['2024 End Term','What is Binary search? Search item 15 from 2,5,8,10,15,24,38,59,75,90 using binary search.'],
+ ['2023 End Term','Write an algorithm and develop a C program to search an integer from N numbers using binary searching technique.'],
+ ['2025 End Term','Write an algorithm for binary search.'],
+ ['2025 Mid Term','Explain any one searching algorithm with example.']
+],
+'Strings: input & output':[
+ ['2023 End Term','Differentiate between put(), putchar() and puts().'],
+ ['2024 Mid Term','What is string? Write a program to find the length of a string?']
+],
+'String functions':[
+ ['2024 End Term','Find the output of the program using strcpy(), strcat(), strrev() and strlen().'],
+ ['2024 End Term','Define string? How it can be declared and initialized? Explain any five-string function with example.'],
+ ['2025 Mid Term','Write a program to check whether a string is a palindrome or not.']
+],
+'Arrays of strings':[
+ ['2024 End Term','Define string? How it can be declared and initialized? Explain any five-string function with example.']
+],
+'Command-line arguments':[
+ ['2025 Mid Term','Explain the command line arguments in C with the help of example.']
+],
+'Root finding of a positive floating-point number':[
+ ['2025 End Term','Write an algorithm to find the square root of an inputted number.']
+]
+};
+
 const state={unit:'all',query:'',important:false,answers:true,current:0,done:new Set(JSON.parse(localStorage.getItem('cGuideDone')||'[]'))};
 const $=s=>document.querySelector(s); const list=$('#topicList'), view=$('#topicView');
 function save(){localStorage.setItem('cGuideDone',JSON.stringify([...state.done]));}
-function filtered(){return topics.map((t,i)=>({...t,i})).filter(x=>(state.unit==='all'||String(x.u)===state.unit)&&(!state.important||x.tags.includes('high'))&&(x.t.toLowerCase().includes(state.query.toLowerCase())||x.intro.toLowerCase().includes(state.query.toLowerCase())))}
+function filtered(){return topics.map((t,i)=>({...t,i})).filter(x=>(state.unit==='all'||String(x.u)===state.unit)&&(!state.important||x.tags.includes('high'))&&(x.t.toLowerCase().includes(state.query.toLowerCase())||x.intro.toLowerCase().includes(state.query.toLowerCase())||(pyqMap[x.t]||[]).some(q=>q[1].toLowerCase().includes(state.query.toLowerCase()))))}
 function renderNav(){const arr=filtered();list.innerHTML=arr.length?arr.map(x=>`<button class="topic-link ${state.done.has(x.i)?'done':''} ${x.i===state.current?'active':''}" data-id="${x.i}"><span class="check"></span><span class="num">${String(x.i+1).padStart(2,'0')}</span><span>${x.t}</span></button>`).join(''):`<div class="empty">No matching topics.</div>`;}
 function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function renderTopic(){const t=topics[state.current]; if(!t)return; view.innerHTML=`<article class="topic" id="topic-${state.current}"><div class="topic-head"><div class="topic-num">${String(state.current+1).padStart(2,'0')}</div><div><h2>${t.t}</h2><div class="topic-meta">${t.u===1?'<span class="tag">Unit I</span>':'<span class="tag">Unit II</span>'}${t.tags.includes('high')?'<span class="tag high">Very important</span>':''}${t.tags.includes('pyq')?'<span class="tag pyq">PYQ</span>':''}${t.tags.includes('program')?'<span class="tag program">Program</span>':''}</div></div></div><div class="card"><h3>What you need to know</h3><p>${t.intro}</p><div class="answer ${state.answers?'':'hidden'}"><p>${t.body}</p></div></div>${t.code?`<div class="card"><h3>Exam-ready code / pattern</h3><div class="code"><button class="copy">Copy</button><pre>${esc(t.code)}</pre></div></div>`:''}${t.exam?`<div class="card"><h3>Exam focus</h3><p>${t.exam}</p></div>`:''}<div class="complete-row"><button class="complete-btn ${state.done.has(state.current)?'done':''}" id="completeBtn">${state.done.has(state.current)?'✓ Completed':'Mark complete'}</button><span class="next">${state.current<topics.length-1?'Next topic →':''}</span></div></article>`; view.scrollIntoView({behavior:'smooth',block:'start'}); updateProgress();}
+function renderTopic(){const t=topics[state.current]; if(!t)return; const qs=pyqMap[t.t]||[]; const pyqHtml=qs.length?`<div class="card pyq-card"><div class="pyq-title"><h3>🔥 PYQs for this topic</h3><span>${qs.length} question${qs.length>1?'s':''}</span></div><div class="pyq-list">${qs.map((q,i)=>`<div class="pyq-item"><div class="pyq-year">${q[0]}</div><div>${esc(q[1])}</div></div>`).join('')}</div></div>`:`<div class="card pyq-card muted-pyq"><div class="pyq-title"><h3>🔥 PYQs for this topic</h3></div><p>No direct PYQ for this exact topic was found in the uploaded ES-102 papers. I haven't invented one.</p></div>`; view.innerHTML=`<article class="topic" id="topic-${state.current}"><div class="topic-head"><div class="topic-num">${String(state.current+1).padStart(2,'0')}</div><div><h2>${t.t}</h2><div class="topic-meta">${t.u===1?'<span class="tag">Unit I</span>':'<span class="tag">Unit II</span>'}${t.tags.includes('high')?'<span class="tag high">Very important</span>':''}${t.tags.includes('pyq')?'<span class="tag pyq">PYQ</span>':''}${t.tags.includes('program')?'<span class="tag program">Program</span>':''}</div></div></div><div class="card"><h3>What you need to know</h3><p>${t.intro}</p><div class="answer ${state.answers?'':'hidden'}"><p>${t.body}</p></div></div>${t.code?`<div class="card"><h3>Exam-ready code / pattern</h3><div class="code"><button class="copy">Copy</button><pre>${esc(t.code)}</pre></div></div>`:''}${t.exam?`<div class="card"><h3>Exam focus</h3><p>${t.exam}</p></div>`:''}${pyqHtml}<div class="complete-row"><button class="complete-btn ${state.done.has(state.current)?'done':''}" id="completeBtn">${state.done.has(state.current)?'✓ Completed':'Mark complete'}</button><span class="next">${state.current<topics.length-1?'Next topic →':''}</span></div></article>`; view.scrollIntoView({behavior:'smooth',block:'start'}); updateProgress();}
 function updateProgress(){const n=state.done.size,p=topics.length?Math.round(n/topics.length*100):0;$('#progressText').textContent=`${n} / ${topics.length} topics done`,$('#progressPct').textContent=p+'%',$('#progressBar').style.width=p+'%';}
 function render(){renderNav();renderTopic();}
 list.addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(!b)return;state.current=+b.dataset.id;render();if(innerWidth<=820)$('#sidebar').classList.remove('open');});
